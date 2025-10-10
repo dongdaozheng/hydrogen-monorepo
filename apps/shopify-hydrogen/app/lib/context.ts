@@ -1,5 +1,5 @@
-import { CART_QUERY_FRAGMENT } from '@shared/graphql/storefront';
-import { AppSession, getLocaleFromRequest } from '@shared/lib';
+import { CART_QUERY_FRAGMENT } from '@repo/graphql/storefront';
+import { AppSession, getLocaleFromRequest } from '@repo/lib';
 import { createHydrogenContext } from '@shopify/hydrogen';
 
 // Define the additional context object

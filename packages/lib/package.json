@@ -1,5 +1,5 @@
 {
-  "name": "@shared/lib",
+  "name": "@repo/lib",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@shared/graphql": "workspace:*"
+    "@repo/graphql": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0"

@@ -1,5 +1,5 @@
-import type { CartApiQueryFragment } from '@shared/graphql/storefront/types';
-import { useVariantUrl } from '@shared/lib';
+import type { CartApiQueryFragment } from '@repo/graphql/storefront/types';
+import { useVariantUrl } from '@repo/lib';
 import { CartForm, Image, type OptimisticCartLine } from '@shopify/hydrogen';
 import type { CartLineUpdateInput } from '@shopify/hydrogen/storefront-api-types';
 import { Link } from 'react-router';

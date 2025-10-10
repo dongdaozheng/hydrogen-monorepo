@@ -1,7 +1,7 @@
-import { PaginatedResourceSection, ProductItem } from '@shared/components';
-import { COLLECTION_QUERY } from '@shared/graphql/storefront';
-import type { ProductItemFragment } from '@shared/graphql/storefront/types';
-import { redirectIfHandleIsLocalized } from '@shared/lib';
+import { PaginatedResourceSection, ProductItem } from '@repo/components';
+import { COLLECTION_QUERY } from '@repo/graphql/storefront';
+import type { ProductItemFragment } from '@repo/graphql/storefront/types';
+import { redirectIfHandleIsLocalized } from '@repo/lib';
 import { Analytics, getPaginationVariables } from '@shopify/hydrogen';
 import { redirect, useLoaderData } from 'react-router';
 import type { Route } from './+types/collections.$handle';

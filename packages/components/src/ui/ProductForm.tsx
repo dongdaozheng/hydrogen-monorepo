@@ -1,4 +1,4 @@
-import type { ProductFragment } from '@shared/graphql/storefront/types';
+import type { ProductFragment } from '@repo/graphql/storefront/types';
 import { type MappedProductOptions } from '@shopify/hydrogen';
 import type { Maybe, ProductOptionValueSwatch } from '@shopify/hydrogen/storefront-api-types';
 import { Link, useNavigate } from 'react-router';

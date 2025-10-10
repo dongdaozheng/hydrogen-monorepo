@@ -1,5 +1,5 @@
-import { ARTICLE_QUERY } from '@shared/graphql/storefront';
-import { redirectIfHandleIsLocalized } from '@shared/lib';
+import { ARTICLE_QUERY } from '@repo/graphql/storefront';
+import { redirectIfHandleIsLocalized } from '@repo/lib';
 import { Image } from '@shopify/hydrogen';
 import { useLoaderData } from 'react-router';
 import type { Route } from './+types/blogs.$blogHandle.$articleHandle';

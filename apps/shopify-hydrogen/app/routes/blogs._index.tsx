@@ -1,6 +1,6 @@
-import { PaginatedResourceSection } from '@shared/components';
-import { BLOGS_QUERY } from '@shared/graphql/storefront';
-import type { BlogsQuery } from '@shared/graphql/storefront/types';
+import { PaginatedResourceSection } from '@repo/components';
+import { BLOGS_QUERY } from '@repo/graphql/storefront';
+import type { BlogsQuery } from '@repo/graphql/storefront/types';
 import { getPaginationVariables } from '@shopify/hydrogen';
 import { Link, useLoaderData } from 'react-router';
 import type { Route } from './+types/blogs._index';

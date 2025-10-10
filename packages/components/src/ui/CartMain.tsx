@@ -1,4 +1,4 @@
-import type { CartApiQueryFragment } from '@shared/graphql/storefront/types';
+import type { CartApiQueryFragment } from '@repo/graphql/storefront/types';
 import { useOptimisticCart } from '@shopify/hydrogen';
 import { Link } from 'react-router';
 import { useAside } from './Aside';

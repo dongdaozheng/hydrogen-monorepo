@@ -1,5 +1,5 @@
-import { PAGE_QUERY } from '@shared/graphql/storefront';
-import { redirectIfHandleIsLocalized } from '@shared/lib';
+import { PAGE_QUERY } from '@repo/graphql/storefront';
+import { redirectIfHandleIsLocalized } from '@repo/lib';
 import { useLoaderData } from 'react-router';
 import type { Route } from './+types/pages.$handle';
 

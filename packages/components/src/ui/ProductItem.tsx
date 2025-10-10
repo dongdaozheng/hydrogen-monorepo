@@ -1,5 +1,5 @@
-import type { ProductItemFragment } from '@shared/graphql/storefront/types';
-import { useVariantUrl } from '@shared/lib';
+import type { ProductItemFragment } from '@repo/graphql/storefront/types';
+import { useVariantUrl } from '@repo/lib';
 import { Image, Money } from '@shopify/hydrogen';
 import { Link } from 'react-router';
 

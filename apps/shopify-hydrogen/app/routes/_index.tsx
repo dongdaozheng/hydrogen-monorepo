@@ -1,4 +1,4 @@
-import { Card } from '@shared/components';
+import { Card } from '@repo/components';
 import type { Route } from './+types/_index';
 
 export const meta: Route.MetaFunction = () => {

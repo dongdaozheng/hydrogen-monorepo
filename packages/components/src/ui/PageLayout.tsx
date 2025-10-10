@@ -1,4 +1,4 @@
-import type { CartApiQueryFragment, FooterQuery, HeaderQuery } from '@shared/graphql/storefront/types';
+import type { CartApiQueryFragment, FooterQuery, HeaderQuery } from '@repo/graphql/storefront/types';
 import { Suspense, useId } from 'react';
 import { Await, Link } from 'react-router';
 import { Aside } from './Aside';

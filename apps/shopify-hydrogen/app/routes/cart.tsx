@@ -1,4 +1,4 @@
-import { CartMain } from '@shared/components';
+import { CartMain } from '@repo/components';
 import type { CartQueryDataReturn } from '@shopify/hydrogen';
 import { CartForm } from '@shopify/hydrogen';
 import { data, useLoaderData, type HeadersFunction } from 'react-router';

@@ -1,5 +1,5 @@
 {
-  "name": "@shared/components",
+  "name": "@repo/components",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@shared/graphql": "workspace:*",
-    "@shared/lib": "workspace:*"
+    "@repo/graphql": "workspace:*",
+    "@repo/lib": "workspace:*"
   }
 }

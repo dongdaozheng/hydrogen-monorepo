@@ -1,5 +1,5 @@
-import { PageLayout } from '@shared/components';
-import { FOOTER_QUERY, HEADER_QUERY } from '@shared/graphql/storefront';
+import { PageLayout } from '@repo/components';
+import { FOOTER_QUERY, HEADER_QUERY } from '@repo/graphql/storefront';
 import { Analytics, getShopAnalytics, useNonce } from '@shopify/hydrogen';
 import {
   isRouteErrorResponse,

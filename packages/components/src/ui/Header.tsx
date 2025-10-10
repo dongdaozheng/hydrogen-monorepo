@@ -1,4 +1,4 @@
-import type { CartApiQueryFragment, HeaderQuery } from '@shared/graphql/storefront/types';
+import type { CartApiQueryFragment, HeaderQuery } from '@repo/graphql/storefront/types';
 import { type CartViewPayload, useAnalytics, useOptimisticCart } from '@shopify/hydrogen';
 import { Suspense } from 'react';
 import { Await, NavLink, useAsyncValue } from 'react-router';

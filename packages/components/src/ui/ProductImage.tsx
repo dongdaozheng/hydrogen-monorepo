@@ -1,4 +1,4 @@
-import type { ProductVariantFragment } from '@shared/graphql/storefront/types';
+import type { ProductVariantFragment } from '@repo/graphql/storefront/types';
 import { Image } from '@shopify/hydrogen';
 
 export function ProductImage({ image }: { image: ProductVariantFragment['image'] }) {

@@ -1,4 +1,4 @@
-import type { PredictiveSearchQuery, RegularSearchQuery } from '@shared/graphql/storefront/types';
+import type { PredictiveSearchQuery, RegularSearchQuery } from '@repo/graphql/storefront/types';
 
 type ResultWithItems<Type extends 'predictive' | 'regular', Items> = {
   type: Type;

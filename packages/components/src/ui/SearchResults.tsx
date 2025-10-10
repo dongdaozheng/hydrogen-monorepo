@@ -1,4 +1,4 @@
-import { urlWithTrackingParams, type RegularSearchReturn } from '@shared/lib';
+import { urlWithTrackingParams, type RegularSearchReturn } from '@repo/lib';
 import { Image, Money, Pagination } from '@shopify/hydrogen';
 import { Link } from 'react-router';
 

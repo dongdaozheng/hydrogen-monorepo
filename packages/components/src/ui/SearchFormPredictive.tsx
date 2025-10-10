@@ -1,4 +1,4 @@
-import type { PredictiveSearchReturn } from '@shared/lib';
+import type { PredictiveSearchReturn } from '@repo/lib';
 import React, { useEffect, useRef } from 'react';
 import { useFetcher, useNavigate, type Fetcher, type FormProps } from 'react-router';
 import { useAside } from './Aside';

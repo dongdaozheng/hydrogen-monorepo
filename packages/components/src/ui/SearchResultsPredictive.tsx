@@ -1,4 +1,4 @@
-import { getEmptyPredictiveSearchResult, urlWithTrackingParams, type PredictiveSearchReturn } from '@shared/lib';
+import { getEmptyPredictiveSearchResult, urlWithTrackingParams, type PredictiveSearchReturn } from '@repo/lib';
 import { Image, Money } from '@shopify/hydrogen';
 import React, { useEffect, useRef } from 'react';
 import { Link, useFetcher, type Fetcher } from 'react-router';

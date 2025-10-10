@@ -1,6 +1,6 @@
-import { ProductForm, ProductImage, ProductPrice } from '@shared/components';
-import { PRODUCT_QUERY } from '@shared/graphql/storefront';
-import { redirectIfHandleIsLocalized } from '@shared/lib';
+import { ProductForm, ProductImage, ProductPrice } from '@repo/components';
+import { PRODUCT_QUERY } from '@repo/graphql/storefront';
+import { redirectIfHandleIsLocalized } from '@repo/lib';
 import {
   Analytics,
   getAdjacentAndFirstAvailableVariants,

@@ -1,4 +1,4 @@
-import type { CartApiQueryFragment } from '@shared/graphql/storefront/types';
+import type { CartApiQueryFragment } from '@repo/graphql/storefront/types';
 import { CartForm, Money, type OptimisticCart } from '@shopify/hydrogen';
 import { useEffect, useRef } from 'react';
 import type { FetcherWithComponents } from 'react-router';

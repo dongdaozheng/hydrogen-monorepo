@@ -1,7 +1,7 @@
-import { SearchForm, SearchResults } from '@shared/components';
-import { PREDICTIVE_SEARCH_QUERY, SEARCH_QUERY } from '@shared/graphql/storefront';
-import type { PredictiveSearchQuery, RegularSearchQuery } from '@shared/graphql/storefront/types';
-import { type PredictiveSearchReturn, type RegularSearchReturn, getEmptyPredictiveSearchResult } from '@shared/lib';
+import { SearchForm, SearchResults } from '@repo/components';
+import { PREDICTIVE_SEARCH_QUERY, SEARCH_QUERY } from '@repo/graphql/storefront';
+import type { PredictiveSearchQuery, RegularSearchQuery } from '@repo/graphql/storefront/types';
+import { type PredictiveSearchReturn, type RegularSearchReturn, getEmptyPredictiveSearchResult } from '@repo/lib';
 import { Analytics, getPaginationVariables } from '@shopify/hydrogen';
 import { useLoaderData } from 'react-router';
 import type { Route } from './+types/search';
