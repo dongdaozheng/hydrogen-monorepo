@@ -24,7 +24,6 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
     "graphql:generate": "graphql-codegen --config ./.graphqlrc.ts --project storefront"
   },
   "sideEffects": false,

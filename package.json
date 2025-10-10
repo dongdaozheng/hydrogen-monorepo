@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "A monorepo for the Hydrogen app",
   "scripts": {
-    "dev": "pnpm --filter @shared/lib dev & pnpm --filter @shared/components dev & pnpm --filter shopify-hydrogen dev",
-    "build": "pnpm --filter @shared/lib build && pnpm --filter @shared/components build && pnpm --filter shopify-hydrogen build",
+    "dev": "pnpm -r --parallel dev",
+    "dev:lib": "pnpm --filter @shared/lib dev",
+    "dev:components": "pnpm --filter @shared/lib dev & pnpm --filter @shared/components dev",
+    "dev:app": "pnpm --filter shopify-hydrogen dev",
+    "build": "pnpm -r build",
+    "build:lib": "pnpm --filter @shared/lib build",
+    "build:components": "pnpm --filter @shared/lib build && pnpm --filter @shared/components build",
+    "build:app": "pnpm --filter @shared/lib build && pnpm --filter @shared/components build && pnpm --filter shopify-hydrogen build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

@@ -3,6 +3,7 @@ export * from './ui/Card';
 export * from './ui/CartLineItem';
 export * from './ui/CartMain';
 export * from './ui/CartSummary';
+export * from './ui/ClientOnly';
 export * from './ui/PageLayout';
 export * from './ui/PaginatedResourceSection';
 export * from './ui/ProductForm';
