@@ -207,6 +207,7 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .header-ctas > * {
+  min-width: -webkit-fill-available;
   min-width: fit-content;
 }
 

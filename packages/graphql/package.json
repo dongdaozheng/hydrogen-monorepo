@@ -1,0 +1,40 @@
+{
+  "name": "@shared/graphql",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./src/index.ts",
+  "exports": {
+    "./storefront": {
+      "types": "./src/storefront/index.ts",
+      "development": "./src/storefront/index.ts",
+      "import": "./dist/storefront/index.js"
+    },
+    "./storefront/types": {
+      "types": "./types/storefront/storefront.generated.d.ts",
+      "development": "./types/storefront/storefront.generated.d.ts",
+      "import": "./dist/storefront/types.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "graphql:generate": "graphql-codegen --config ./.graphqlrc.ts --project storefront"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@graphql-codegen/schema-ast": "^5.0.0",
+    "@graphql-codegen/typescript": "^5.0.2",
+    "@graphql-codegen/typescript-operations": "^5.0.2",
+    "@graphql-tools/code-file-loader": "^8.1.22",
+    "@graphql-tools/graphql-tag-pluck": "^8.3.21",
+    "@shopify/graphql-codegen": "^0.1.0",
+    "tsup": "^8.5.0"
+  }
+}

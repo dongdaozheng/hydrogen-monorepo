@@ -1,22 +1,17 @@
-import {defineConfig} from 'vite';
-import {hydrogen} from '@shopify/hydrogen/vite';
-import {oxygen} from '@shopify/mini-oxygen/vite';
-import {reactRouter} from '@react-router/dev/vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import { reactRouter } from '@react-router/dev/vite';
+import { hydrogen } from '@shopify/hydrogen/vite';
+import { oxygen } from '@shopify/mini-oxygen/vite';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    hydrogen(),
-    oxygen(),
-    reactRouter(),
-    tsconfigPaths(),
-  ],
+  plugins: [tailwindcss(), hydrogen(), oxygen(), ...(reactRouter() as any), tsconfigPaths()],
   build: {
     // Allow a strict Content-Security-Policy
     // withtout inlining assets as base64:
-    assetsInlineLimit: 0,
+    assetsInlineLimit: 0
   },
   ssr: {
     optimizeDeps: {
@@ -30,10 +25,15 @@ export default defineConfig({
        * Include 'example-dep' in the array below.
        * @see https://vitejs.dev/config/dep-optimization-options
        */
-      include: ['set-cookie-parser', 'cookie', 'react-router'],
-    },
+      include: ['set-cookie-parser', 'cookie', 'react-router']
+    }
+  },
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname, 'app')
+    }
   },
   server: {
-    allowedHosts: ['.tryhydrogen.dev'],
-  },
+    allowedHosts: ['.tryhydrogen.dev']
+  }
 });

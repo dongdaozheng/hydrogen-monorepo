@@ -1,7 +1,6 @@
-import {createHydrogenContext} from '@shopify/hydrogen';
-import {AppSession} from '~/lib/session';
-import {CART_QUERY_FRAGMENT} from '~/lib/fragments';
-import {getLocaleFromRequest} from '~/lib/i18n';
+import { CART_QUERY_FRAGMENT } from '@shared/graphql/storefront';
+import { AppSession, getLocaleFromRequest } from '@shared/lib';
+import { createHydrogenContext } from '@shopify/hydrogen';
 
 // Define the additional context object
 const additionalContext = {
@@ -19,15 +18,7 @@ declare global {
   interface HydrogenAdditionalContext extends AdditionalContextType {}
 }
 
-/**
- * Creates Hydrogen context for React Router 7.9.x
- * Returns HydrogenRouterContextProvider with hybrid access patterns
- * */
-export async function createHydrogenRouterContext(
-  request: Request,
-  env: Env,
-  executionContext: ExecutionContext,
-) {
+export async function createHydrogenRouterContext(request: Request, env: Env, executionContext: ExecutionContext) {
   /**
    * Open a cache instance in the worker and a custom session instance.
    */
@@ -36,10 +27,7 @@ export async function createHydrogenRouterContext(
   }
 
   const waitUntil = executionContext.waitUntil.bind(executionContext);
-  const [cache, session] = await Promise.all([
-    caches.open('hydrogen'),
-    AppSession.init(request, [env.SESSION_SECRET]),
-  ]);
+  const [cache, session] = await Promise.all([caches.open('hydrogen'), AppSession.init(request, [env.SESSION_SECRET])]);
 
   const hydrogenContext = createHydrogenContext(
     {
@@ -48,13 +36,12 @@ export async function createHydrogenRouterContext(
       cache,
       waitUntil,
       session,
-      // Or detect from URL path based on locale subpath, cookies, or any other strategy
       i18n: getLocaleFromRequest(request),
       cart: {
-        queryFragment: CART_QUERY_FRAGMENT,
-      },
+        queryFragment: CART_QUERY_FRAGMENT
+      }
     },
-    additionalContext,
+    additionalContext
   );
 
   return hydrogenContext;

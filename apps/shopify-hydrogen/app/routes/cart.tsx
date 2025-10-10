@@ -1,21 +1,21 @@
-import {useLoaderData, data, type HeadersFunction} from 'react-router';
-import type {Route} from './+types/cart';
-import type {CartQueryDataReturn} from '@shopify/hydrogen';
-import {CartForm} from '@shopify/hydrogen';
-import {CartMain} from '~/components/CartMain';
+import { CartMain } from '@shared/components';
+import type { CartQueryDataReturn } from '@shopify/hydrogen';
+import { CartForm } from '@shopify/hydrogen';
+import { data, useLoaderData, type HeadersFunction } from 'react-router';
+import type { Route } from './+types/cart';
 
 export const meta: Route.MetaFunction = () => {
-  return [{title: `Hydrogen | Cart`}];
+  return [{ title: `Hydrogen | Cart` }];
 };
 
-export const headers: HeadersFunction = ({actionHeaders}) => actionHeaders;
+export const headers: HeadersFunction = ({ actionHeaders }) => actionHeaders;
 
-export async function action({request, context}: Route.ActionArgs) {
-  const {cart} = context;
+export async function action({ request, context }: Route.ActionArgs) {
+  const { cart } = context;
 
   const formData = await request.formData();
 
-  const {action, inputs} = CartForm.getFormInput(formData);
+  const { action, inputs } = CartForm.getFormInput(formData);
 
   if (!action) {
     throw new Error('No action provided');
@@ -37,12 +37,8 @@ export async function action({request, context}: Route.ActionArgs) {
     case CartForm.ACTIONS.DiscountCodesUpdate: {
       const formDiscountCode = inputs.discountCode;
 
-      // User inputted discount code
-      const discountCodes = (
-        formDiscountCode ? [formDiscountCode] : []
-      ) as string[];
+      const discountCodes = (formDiscountCode ? [formDiscountCode] : []) as string[];
 
-      // Combine discount codes already applied on cart
       discountCodes.push(...inputs.discountCodes);
 
       result = await cart.updateDiscountCodes(discountCodes);
@@ -51,12 +47,8 @@ export async function action({request, context}: Route.ActionArgs) {
     case CartForm.ACTIONS.GiftCardCodesUpdate: {
       const formGiftCardCode = inputs.giftCardCode;
 
-      // User inputted gift card code
-      const giftCardCodes = (
-        formGiftCardCode ? [formGiftCardCode] : []
-      ) as string[];
+      const giftCardCodes = (formGiftCardCode ? [formGiftCardCode] : []) as string[];
 
-      // Combine gift card codes already applied on cart
       giftCardCodes.push(...inputs.giftCardCodes);
 
       result = await cart.updateGiftCardCodes(giftCardCodes);
@@ -69,7 +61,7 @@ export async function action({request, context}: Route.ActionArgs) {
     }
     case CartForm.ACTIONS.BuyerIdentityUpdate: {
       result = await cart.updateBuyerIdentity({
-        ...inputs.buyerIdentity,
+        ...inputs.buyerIdentity
       });
       break;
     }
@@ -79,7 +71,7 @@ export async function action({request, context}: Route.ActionArgs) {
 
   const cartId = result?.cart?.id;
   const headers = cartId ? cart.setCartId(result.cart.id) : new Headers();
-  const {cart: cartResult, errors, warnings} = result;
+  const { cart: cartResult, errors, warnings } = result;
 
   const redirectTo = formData.get('redirectTo') ?? null;
   if (typeof redirectTo === 'string') {
@@ -93,15 +85,15 @@ export async function action({request, context}: Route.ActionArgs) {
       errors,
       warnings,
       analytics: {
-        cartId,
-      },
+        cartId
+      }
     },
-    {status, headers},
+    { status, headers }
   );
 }
 
-export async function loader({context}: Route.LoaderArgs) {
-  const {cart} = context;
+export async function loader({ context }: Route.LoaderArgs) {
+  const { cart } = context;
   return await cart.get();
 }
 

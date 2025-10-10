@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "A monorepo for the Hydrogen app",
   "scripts": {
+    "dev": "pnpm --filter @shared/lib dev & pnpm --filter @shared/components dev & pnpm --filter shopify-hydrogen dev",
+    "build": "pnpm --filter @shared/lib build && pnpm --filter @shared/components build && pnpm --filter shopify-hydrogen build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@shopify/api-codegen-preset": "^1.2.0",
     "@shopify/hydrogen": "2025.7.0",
     "graphql": "^16.10.0",
+    "graphql-config": "^5.1.5",
     "graphql-tag": "^2.12.6",
     "isbot": "^5.1.22",
     "react": "18.3.1",

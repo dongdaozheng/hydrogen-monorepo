@@ -1,17 +1,20 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
+    "target": "ES2020",
     "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
     "outDir": "dist",
     "baseUrl": ".",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "removeComments": true,
-    "esModuleInterop": true,
-    "lib": ["ESNEXT", "DOM"],
-    "jsx": "react-jsx"
-  }
+    "removeComments": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "build", "node_modules"]
 }
-

@@ -19,6 +19,8 @@ packages/env/src/country/others
 *.template
 
 
+packages/graphql/types
+
 # Turbo
 .turbo
 

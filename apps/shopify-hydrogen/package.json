@@ -15,7 +15,9 @@
   "prettier": "@shopify/prettier-config",
   "dependencies": {
     "@shopify/hydrogen": "2025.7.0",
-    "@shared/components": "workspace:*"
+    "@shared/components": "workspace:*",
+    "@shared/graphql": "workspace:*",
+    "@shared/lib": "workspace:*"
   },
   "engines": {
     "node": ">=18.0.0"
