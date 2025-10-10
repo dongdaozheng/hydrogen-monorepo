@@ -1,9 +1,5 @@
-import type {HydrogenSession} from '@shopify/hydrogen';
-import {
-  createCookieSessionStorage,
-  type SessionStorage,
-  type Session,
-} from 'react-router';
+import type { HydrogenSession } from '@shopify/hydrogen';
+import { createCookieSessionStorage, type Session, type SessionStorage } from 'react-router';
 
 /**
  * This is a custom session implementation for your Hydrogen shop.
@@ -28,13 +24,11 @@ export class AppSession implements HydrogenSession {
         httpOnly: true,
         path: '/',
         sameSite: 'lax',
-        secrets,
-      },
+        secrets
+      }
     });
 
-    const session = await storage
-      .getSession(request.headers.get('Cookie'))
-      .catch(() => storage.getSession());
+    const session = await storage.getSession(request.headers.get('Cookie')).catch(() => storage.getSession());
 
     return new this(storage, session);
   }

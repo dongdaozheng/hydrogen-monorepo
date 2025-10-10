@@ -1,21 +1,16 @@
-import type {I18nBase} from '@shopify/hydrogen';
+import type { I18nBase } from '@shopify/hydrogen';
 
 export function getLocaleFromRequest(request: Request): I18nBase {
-  const defaultLocale: I18nBase = {language: 'EN', country: 'US'};
+  const defaultLocale: I18nBase = { language: 'EN', country: 'US' };
   const supportedLocales = {
     ES: 'ES',
     FR: 'FR',
     DE: 'DE',
-    JP: 'JA',
+    JP: 'JA'
   } as Record<I18nBase['country'], I18nBase['language']>;
 
   const url = new URL(request.url);
-  const domain = url.hostname
-    .split('.')
-    .pop()
-    ?.toUpperCase() as keyof typeof supportedLocales;
+  const domain = url.hostname.split('.').pop()?.toUpperCase() as keyof typeof supportedLocales;
 
-  return domain && supportedLocales[domain]
-    ? {language: supportedLocales[domain], country: domain}
-    : defaultLocale;
+  return domain && supportedLocales[domain] ? { language: supportedLocales[domain], country: domain } : defaultLocale;
 }
