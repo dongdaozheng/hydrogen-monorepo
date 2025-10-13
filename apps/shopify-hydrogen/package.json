@@ -14,10 +14,11 @@
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
-    "@shopify/hydrogen": "2025.7.0",
     "@repo/components": "workspace:*",
     "@repo/graphql": "workspace:*",
-    "@repo/lib": "workspace:*"
+    "@repo/lib": "workspace:*",
+    "@shopify/hydrogen": "2025.7.0",
+    "@shopify/shopify-api": "^12.0.0"
   },
   "engines": {
     "node": ">=18.0.0"

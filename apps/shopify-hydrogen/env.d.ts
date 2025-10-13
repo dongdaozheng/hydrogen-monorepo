@@ -13,6 +13,6 @@ declare module 'react-router' {
 
 declare global {
   interface Env extends HydrogenEnv {
-    // Add custom environment variables here
+    PRIVATE_ADMIN_TOKEN?: string; // Admin API 访问令牌
   }
 }

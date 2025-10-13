@@ -3,7 +3,9 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: {
     'storefront/index': 'src/storefront/index.ts',
-    'storefront/types': 'types/storefront/storefront.generated.d.ts'
+    'storefront/types': 'types/storefront/storefront.generated.d.ts',
+    'admin/index': 'src/admin/index.ts',
+    'admin/types': 'types/admin/admin.generated.d.ts'
   },
   format: ['esm'],
   dts: true,

@@ -9,12 +9,13 @@ export default {
       outputDir: './types/storefront',
       apiVersion: '2025-07',
       declarations: true
+    }),
+    admin: shopifyApiProject({
+      apiType: ApiType.Admin,
+      documents: ['./src/admin/**/*.{ts,tsx,js,jsx}'],
+      outputDir: './types/admin',
+      declarations: true,
+      apiVersion: '2025-07'
     })
-    // admin: shopifyApiProject({
-    //   apiType: ApiType.Admin,
-    //   documents: ['./src/admin/**/*.{ts,tsx,js,jsx}'],
-    //   outputDir: './types/admin',
-    //   declarations: true
-    // })
   }
 } as IGraphQLConfig;

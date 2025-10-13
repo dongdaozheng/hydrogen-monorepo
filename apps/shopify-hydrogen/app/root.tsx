@@ -1,5 +1,6 @@
 import { PageLayout } from '@repo/components';
 import { FOOTER_QUERY, HEADER_QUERY } from '@repo/graphql/storefront';
+import type { CartApiQueryFragment } from '@repo/graphql/storefront/types';
 import { Analytics, getShopAnalytics, useNonce } from '@shopify/hydrogen';
 import {
   isRouteErrorResponse,
@@ -135,7 +136,7 @@ export default function App() {
 
   return (
     <Analytics.Provider cart={data.cart} shop={data.shop} consent={data.consent}>
-      <PageLayout {...data}>
+      <PageLayout {...data} cart={data.cart as Promise<CartApiQueryFragment | null>}>
         <Outlet />
       </PageLayout>
     </Analytics.Provider>
