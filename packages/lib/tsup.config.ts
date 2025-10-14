@@ -7,5 +7,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   minify: true,
-  treeshake: true
+  treeshake: true,
+  external: ['react', 'react/jsx-runtime', 'react-router', '@shopify/hydrogen']
 });
