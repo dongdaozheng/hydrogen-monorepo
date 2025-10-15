@@ -55,6 +55,8 @@ export function createAdminClient({
           return data as T;
         }
 
+        console.log('cache miss');
+
         const response = await client.request<T>(query, { variables });
 
         // 使用 waitUntil 确保缓存写入完成，但不阻塞响应

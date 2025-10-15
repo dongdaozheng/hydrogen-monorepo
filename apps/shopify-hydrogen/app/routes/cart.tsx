@@ -1,4 +1,5 @@
 import { CartMain } from '@repo/components';
+import type { CartApiQueryFragment } from '@repo/graphql/storefront/types';
 import type { CartQueryDataReturn } from '@shopify/hydrogen';
 import { CartForm } from '@shopify/hydrogen';
 import { data, useLoaderData, type HeadersFunction } from 'react-router';
@@ -94,7 +95,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 
 export async function loader({ context }: Route.LoaderArgs) {
   const { cart } = context;
-  return await cart.get();
+  return (await cart.get()) as CartApiQueryFragment;
 }
 
 export default function Cart() {

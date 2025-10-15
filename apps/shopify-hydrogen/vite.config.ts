@@ -2,6 +2,8 @@ import { reactRouter } from '@react-router/dev/vite';
 import { hydrogen } from '@shopify/hydrogen/vite';
 import { oxygen } from '@shopify/mini-oxygen/vite';
 import tailwindcss from '@tailwindcss/vite';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import path from 'path';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -26,6 +28,17 @@ export default defineConfig({
        * @see https://vitejs.dev/config/dep-optimization-options
        */
       include: ['set-cookie-parser', 'cookie', 'react-router']
+    }
+  },
+  css: {
+    preprocessorOptions: {},
+    postcss: {
+      plugins: [
+        autoprefixer({
+          overrideBrowserslist: ['defaults', 'not ie < 11', 'last 2 versions', '> 1%', 'iOS 7', 'last 3 iOS versions']
+        }),
+        cssnano()
+      ]
     }
   },
   resolve: {

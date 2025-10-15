@@ -14,8 +14,8 @@ import {
   type ShouldRevalidateFunction
 } from 'react-router';
 import favicon from '~/assets/favicon.svg';
-import appStyles from '~/styles/app.css?url';
-import resetStyles from '~/styles/reset.css?url';
+import appStyles from '~/styles/app.scss?url';
+import resetStyles from '~/styles/reset.scss?url';
 import type { Route } from './+types/root';
 import tailwindCss from './styles/tailwind.css?url';
 
