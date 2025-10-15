@@ -5,7 +5,8 @@
   "version": "2025.7.0",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @repo/lib build && pnpm --filter @repo/components build && pnpm --filter @repo/graphql build && shopify hydrogen build --codegen",
+    "build": "bash build.sh",
+    "deploy": "shopify hydrogen deploy",
     "dev": "shopify hydrogen dev --codegen",
     "preview": "pnpm --filter @repo/lib build && pnpm --filter @repo/components build && pnpm --filter @repo/graphql build && shopify hydrogen preview --build",
     "lint": "eslint --no-error-on-unmatched-pattern .",
