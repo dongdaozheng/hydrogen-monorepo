@@ -7,7 +7,7 @@
   "scripts": {
     "build": "bash build.sh",
     "deploy": "shopify hydrogen deploy",
-    "dev": "shopify hydrogen dev --codegen",
+    "dev": "pnpm --filter @repo/graphql build && shopify hydrogen dev --codegen",
     "preview": "pnpm --filter @repo/lib build && pnpm --filter @repo/components build && pnpm --filter @repo/graphql build && shopify hydrogen preview --build",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
