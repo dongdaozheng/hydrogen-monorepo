@@ -38,6 +38,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
+    "@graphql-codegen/introspection": "^5.0.0",
     "@graphql-codegen/schema-ast": "^5.0.0",
     "@graphql-codegen/typescript": "^5.0.2",
     "@graphql-codegen/typescript-operations": "^5.0.2",
